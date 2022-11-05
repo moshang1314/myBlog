@@ -479,6 +479,16 @@
 > ```shell
 > git pull <远程主机名> <远程分支名>:<本地主机名>
 > ```
+>
+> > xxx:指文件名
+> >
+> > git update-index --assume-unchanged xxx //pull时候忽略xxx这个文件
+> >
+> > git update-index --no-assume-unchanged xxx //pull时候取消忽略xxx这个文件
+> >
+> > //忽略Output 这个文件夹，注意后面带着 / 斜杠
+> >
+> > git update-index --assume-unchanged Output/
 
 ## 7.4 推送到远程仓库
 
@@ -564,9 +574,9 @@
 > 
 > 
 > # 如果远程分支已存在,如果本地分支名与远程分支名相同则可以省略本地分支名
-> $ git branch --set-upstream <本地新建分支名> <远程主机名/远程分支名> 
-> # 或
-> $ git branch -u <本地新建分支名> <远程主机名/远程分支名>
+> $ git branch --set-upstream-to=origin/remote_branch local_branch 
+> # 等同于
+> $ git branch -u origin/remote_branch local_branch
 > 
 > # 撤销本地分支与远程分支的关系
 > $ git branch --unset-upstream <本地分支名>
@@ -580,6 +590,8 @@
 > # 或
 > $ git push origin --delete XXX
 > ```
+>
+> [(204条消息) git 关联远程分支_John_desheng的博客-CSDN博客_git 关联远程分支](https://blog.csdn.net/John_desheng/article/details/112663991)
 
 # 8 github
 
